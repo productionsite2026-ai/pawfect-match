@@ -20,6 +20,7 @@ import MissionStartButton from "@/components/dashboard/walker/MissionStartButton
 import { ValidationCodeCard } from "@/components/booking/ValidationCodeCard";
 import { ValidateCodeInput } from "@/components/booking/ValidateCodeInput";
 import { SOSReleaseDialog } from "@/components/booking/SOSReleaseDialog";
+import { BookingContactCard } from "@/components/booking/BookingContactCard";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -69,10 +70,10 @@ const BookingDetails = () => {
 
       if (error) throw error;
 
-      // Fetch walker info
+      // Fetch walker info (sans téléphone — passe par RPC sécurisée get_booking_contact)
       const { data: walker, error: walkerError } = await supabase
         .from('profiles')
-        .select('first_name, city, phone')
+        .select('first_name, city')
         .eq('id', data.walker_id)
         .single();
 
@@ -286,6 +287,11 @@ const BookingDetails = () => {
                 )}
               </CardContent>
             </Card>
+          </motion.div>
+
+          {/* Contact masqué hors fenêtre de mission (CDC §9 anonymisation) */}
+          <motion.div variants={itemVariants} className="mt-6">
+            <BookingContactCard bookingId={booking.id} />
           </motion.div>
 
           {booking.notes && (
