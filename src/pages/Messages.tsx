@@ -15,8 +15,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { FloatingContact } from "@/components/ui/floating-contact";
 import { useRealtimeMessages, Conversation } from "@/hooks/useRealtimeMessages";
+import { useMessageGuard } from "@/hooks/useMessageGuard";
 import { MessageBubble, TypingIndicator, ConversationItem } from "@/components/messaging";
 import { cn } from "@/lib/utils";
+import { ShieldCheck, Lock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const Messages = () => {
   const navigate = useNavigate();
@@ -40,6 +43,11 @@ const Messages = () => {
     isUserTyping,
     isUserOnline
   } = useRealtimeMessages(selectedConversation?.otherParticipant?.id);
+
+  // Anti-fraude (CDC §4.3) : restriction messagerie tant qu'aucun paiement séquestré
+  const { hasConfirmedBooking, prewrittenMessages } = useMessageGuard(
+    selectedConversation?.otherParticipant?.id
+  );
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -316,30 +324,69 @@ const Messages = () => {
                     </div>
                   </ScrollArea>
 
-                  {/* Message Input */}
+                  {/* Message Input — restreint avant paiement (CDC §4.3) */}
                   <div className="p-4 border-t bg-background">
-                    <div className="flex items-center gap-2 max-w-4xl mx-auto">
-                      <Button variant="ghost" size="icon" className="text-muted-foreground shrink-0">
-                        <Smile className="h-5 w-5" />
-                      </Button>
-                      <Input 
-                        ref={inputRef}
-                        placeholder="Votre message..." 
-                        value={newMessage}
-                        onChange={handleInputChange}
-                        onKeyDown={handleKeyDown}
-                        className="flex-1"
-                        disabled={sendingMessage}
-                      />
-                      <Button 
-                        size="icon" 
-                        onClick={handleSendMessage}
-                        disabled={!newMessage.trim() || sendingMessage}
-                        className="shrink-0 shadow-lg shadow-primary/20"
-                      >
-                        <Send className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    {!hasConfirmedBooking ? (
+                      <div className="max-w-4xl mx-auto space-y-3">
+                        <div className="flex items-start gap-2 p-3 rounded-lg bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900">
+                          <Lock className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                          <div className="text-xs text-amber-800 dark:text-amber-200">
+                            <strong>Messagerie sécurisée DogWalking.</strong> Tant qu'aucune réservation
+                            n'est confirmée, seuls les messages pré-enregistrés sont autorisés. Cela
+                            protège les deux parties contre la fraude.
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {prewrittenMessages.map((msg) => (
+                            <Button
+                              key={msg}
+                              variant="outline"
+                              size="sm"
+                              className="text-xs h-auto py-1.5"
+                              disabled={sendingMessage}
+                              onClick={async () => {
+                                if (!selectedConversation?.otherParticipant?.id) return;
+                                setSendingMessage(true);
+                                await sendMessageHook(msg, selectedConversation.otherParticipant.id);
+                                setSendingMessage(false);
+                              }}
+                            >
+                              {msg}
+                            </Button>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="flex items-center gap-2 mb-2 max-w-4xl mx-auto">
+                          <Badge variant="secondary" className="gap-1 text-xs">
+                            <ShieldCheck className="h-3 w-3" /> Conversation sécurisée — paiement séquestré
+                          </Badge>
+                        </div>
+                        <div className="flex items-center gap-2 max-w-4xl mx-auto">
+                          <Button variant="ghost" size="icon" className="text-muted-foreground shrink-0">
+                            <Smile className="h-5 w-5" />
+                          </Button>
+                          <Input
+                            ref={inputRef}
+                            placeholder="Votre message..."
+                            value={newMessage}
+                            onChange={handleInputChange}
+                            onKeyDown={handleKeyDown}
+                            className="flex-1"
+                            disabled={sendingMessage}
+                          />
+                          <Button
+                            size="icon"
+                            onClick={handleSendMessage}
+                            disabled={!newMessage.trim() || sendingMessage}
+                            className="shrink-0 shadow-lg shadow-primary/20"
+                          >
+                            <Send className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </motion.div>
               ) : (
