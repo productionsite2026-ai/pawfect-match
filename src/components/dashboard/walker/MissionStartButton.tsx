@@ -166,9 +166,16 @@ export const MissionStartButton: React.FC<MissionStartButtonProps> = ({
 
     } catch (error: any) {
       console.error("Error:", error);
+      const msg = String(error?.message || "");
+      let userMsg = msg || "Impossible d'envoyer la preuve";
+      if (msg.includes("start_proof_required")) {
+        userMsg = "Photo de prise en charge obligatoire avant de démarrer la mission.";
+      } else if (msg.includes("cancellation_too_late")) {
+        userMsg = "Action impossible à moins de 3h du début. Contactez le support.";
+      }
       toast({
         title: "Erreur",
-        description: error.message || "Impossible d'envoyer la preuve",
+        description: userMsg,
         variant: "destructive"
       });
     } finally {
