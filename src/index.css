@@ -1,97 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Design System DogWalking — Palette Émeraude Professionnelle
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Vert Émeraude */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Bleu Océan */
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 160 84% 39%;
 
-    --radius: 0.5rem;
+    /* Theme Colors */
+    --sage-green: 160 84% 39%;
+    --sage-green-light: 160 84% 94%;
+    --ocean-blue: 200 80% 45%;
+    --ocean-blue-light: 200 80% 92%;
+    --warm-beige: 45 29% 97%;
+    --earthy-brown: 30 20% 25%;
+
+    --heart: 0 100% 50%;
+    --heart-light: 0 100% 85%;
+
+    /* Dashboard Colors */
+    --owner-orange: 160 84% 39%;
+    --owner-orange-light: 160 84% 94%;
+    --owner-coral: 160 60% 35%;
+    --owner-coral-light: 160 60% 92%;
+    
+    --walker-blue: 160 84% 39%;
+    --walker-blue-light: 160 84% 94%;
+    --walker-navy: 160 60% 30%;
+    --walker-violet: 160 84% 45%;
+    --walker-gradient-end: 200 80% 45%;
+    
+    /* Stat Accents */
+    --stat-red: 0 65% 55%;
+    --stat-red-light: 0 65% 94%;
+    --stat-green: 160 70% 42%;
+    --stat-green-light: 160 70% 94%;
+    --stat-blue: 200 80% 45%;
+    --stat-blue-light: 200 80% 94%;
+    --stat-yellow: 38 80% 55%;
+    --stat-yellow-light: 38 80% 93%;
+    --stat-purple: 220 15% 50%;
+    --stat-purple-light: 220 15% 93%;
+    --stat-cyan: 180 60% 42%;
+    --stat-cyan-light: 180 60% 93%;
+    
+    /* Actions */
+    --action-accept: 160 84% 39%;
+    --action-refuse: 0 65% 55%;
+    --action-warning: 38 80% 55%;
+
+    /* New dashboard tokens */
+    --passion: 12 88% 55%;
+    --passion-foreground: 0 0% 100%;
+    --community: 268 55% 55%;
+    --community-foreground: 0 0% 100%;
+    --cta: 8 78% 58%;
+    --cta-foreground: 0 0% 100%;
+    --star: 45 95% 52%;
+    
+    /* Legacy aliases */
+    --walker: var(--walker-blue);
+    --owner: var(--owner-orange);
+    --success: var(--stat-green);
+    --warning: var(--stat-yellow);
+    --info: var(--stat-cyan);
+    --violet: var(--stat-purple);
+    --money: var(--stat-green);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(180deg, transparent 0%, hsl(220 25% 12% / 0.5) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--warm-beige)) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--cta)), hsl(25 85% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(170 60% 45%));
+    --gradient-passion: linear-gradient(135deg, hsl(var(--passion)), hsl(25 88% 58%));
+    --gradient-community: linear-gradient(135deg, hsl(var(--community)), hsl(290 50% 60%));
+    
+    --gradient-walker: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-owner: linear-gradient(135deg, hsl(var(--primary)), hsl(160 60% 35%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--stat-green)), hsl(var(--primary)));
+    --gradient-money: linear-gradient(135deg, hsl(var(--primary)), hsl(160 84% 45%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.08);
+    --shadow-card: 0 2px 16px -2px hsl(220 25% 12% / 0.07);
+    --shadow-card-hover: 0 8px 30px -4px hsl(220 25% 12% / 0.13);
+    --shadow-elevated: 0 12px 40px -8px hsl(220 25% 12% / 0.18);
+    --shadow-button: 0 4px 15px -3px hsl(var(--primary) / 0.2);
+    --shadow-glow-primary: 0 4px 20px -4px hsl(var(--primary) / 0.35);
+    --shadow-glow-cta: 0 4px 20px -4px hsl(var(--cta) / 0.35);
+    --shadow-vivid: 0 8px 25px -5px;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 160 84% 39%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Nunito', sans-serif;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 7%;
+    --foreground: 220 14% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 20% 9%;
+    --card-foreground: 220 14% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 20% 9%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 20% 13%;
+    --secondary-foreground: 220 14% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 20% 13%;
+    --muted-foreground: 220 9% 56%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 220 14% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 20% 14%;
+    --input: 220 20% 14%;
+    --ring: 160 84% 39%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(180deg, transparent 0%, hsl(220 25% 12% / 0.5) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(220 20% 10%) 100%);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 160 84% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 160 84% 39%;
   }
+}
+
+/* Icon utilities */
+.icon-primary { @apply text-primary; }
+.icon-accent { @apply text-accent; }
+.icon-success { @apply text-emerald-500; }
+.icon-warning { @apply text-amber-500; }
+.icon-info { @apply text-sky-500; }
+
+.icon-bg-primary { @apply bg-primary/10; }
+.icon-bg-accent { @apply bg-accent/10; }
+.icon-bg-success { @apply bg-emerald-500/10; }
+.icon-bg-warning { @apply bg-amber-500/10; }
+.icon-bg-info { @apply bg-sky-500/10; }
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+
+.animated-underline {
+  @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px hsl(var(--accent) / 0.15);
+}
+
+/* Walker dashboard header gradient */
+.walker-header-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
 }
 
 @layer base {
@@ -101,5 +224,54 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .shadow-glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+  .shadow-glow-cta {
+    box-shadow: var(--shadow-glow-cta);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  .gradient-passion {
+    background: var(--gradient-passion);
+  }
+  .gradient-community {
+    background: var(--gradient-community);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

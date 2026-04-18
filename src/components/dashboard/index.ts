@@ -1,0 +1,32 @@
+export { StatsCard } from './StatsCard';
+export { QuickActions } from './QuickActions';
+export { ActivityTimeline } from './ActivityTimeline';
+export { UpcomingBookings } from './UpcomingBookings';
+export { DogsList } from './DogsList';
+export { FavoriteWalkers } from './FavoriteWalkers';
+export { WelcomeHero } from './WelcomeHero';
+export { ProfileCompletion } from './ProfileCompletion';
+export { PendingRequests } from './PendingRequests';
+export { DocumentStatus } from './DocumentStatus';
+export { EarningsChart } from './EarningsChart';
+export { PerformanceStats } from './PerformanceStats';
+export { EmptyState } from './EmptyState';
+export { WelcomeCard } from './WelcomeCard';
+export { QuickStats } from './QuickStats';
+export { VerificationBanner } from './VerificationBanner';
+export { BookingActionCard } from './BookingActionCard';
+
+// Shared components
+export { default as DashboardSearch } from './shared/DashboardSearch';
+export { default as AnimatedStatsCard } from './shared/AnimatedStatsCard';
+export { default as ActivityTimelineNew } from './shared/ActivityTimeline';
+export { default as AvatarUpload } from './shared/AvatarUpload';
+export { default as DogPhotoUpload } from './shared/DogPhotoUpload';
+export { default as SOSButton } from './shared/SOSButton';
+export { default as StatCard } from './shared/StatCard';
+export { default as QuickActionCard } from './shared/QuickActionCard';
+export { default as DashboardHeader } from './shared/DashboardHeader';
+export { default as RoleChoiceDialog } from './shared/RoleChoiceDialog';
+export { default as AnimatedPageWrapper, AnimatedItem, staggerContainer, fadeInUp, fadeInScale, slideInLeft, slideInRight } from './shared/AnimatedPageWrapper';
+export { default as ActivityFeed, type ActivityItem } from './shared/ActivityFeed';
+export { default as CircularProgress } from './shared/CircularProgress';
