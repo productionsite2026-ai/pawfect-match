@@ -102,7 +102,7 @@ export const tarifsFAQs: FAQItem[] = [
 export const securiteFAQs: FAQItem[] = [
   {
     question: "Comment les promeneurs sont-ils vérifiés par DogWalking ?",
-    answer: "Chaque promeneur doit fournir une pièce d'identité (CNI ou passeport), une attestation de vérification approfondie vierge ou extrait B3, et une preuve d'protection professionnelle. Notre équipe vérifie manuellement chaque document avant validation. Ce processus prend généralement 24 à 48 heures ouvrées."
+    answer: "Chaque promeneur doit fournir une pièce d'identité (CNI ou passeport), un extrait de casier judiciaire B2 vierge, et une preuve d'protection professionnelle. Notre équipe vérifie manuellement chaque document avant validation. Ce processus prend généralement 24 à 48 heures ouvrées."
   },
   {
     question: "Que se passe-t-il si mon chien est blessé pendant une promenade ?",
@@ -156,7 +156,7 @@ export const promenadeFAQs: FAQItem[] = [
 export const deveniAccompagnateur_CertifiéFAQs: FAQItem[] = [
   {
     question: "Quelles sont les conditions pour devenir promeneur DogWalking ?",
-    answer: "Vous devez être majeur, résider en France, et fournir : une pièce d'identité valide, une attestation de vérification approfondie vierge (ou extrait B3), une preuve d'protection professionnelle, et une photo de profil réelle. Aucun diplôme spécifique n'est requis, mais l'expérience avec les chiens est un plus apprécié."
+    answer: "Vous devez être majeur, résider en France, et fournir : une pièce d'identité valide, un extrait de casier judiciaire B2 vierge, une preuve d'protection professionnelle, et une photo de profil réelle. Aucun diplôme spécifique n'est requis, mais l'expérience avec les chiens est un plus apprécié."
   },
   {
     question: "Combien puis-je gagner comme promeneur de chien ?",
