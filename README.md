@@ -24,7 +24,6 @@ Le projet est conçu pour une séparation stricte des usages :
 ### 1. Sélection Elite (Cible 35%)
 Chaque Accompagnateur subit une vérification manuelle rigoureuse pour garantir un haut niveau de fiabilité :
 - **CNI** : Vérification de la pièce d'identité.
-- **Casier B2** : Vérification du casier judiciaire (B2) vierge.
 - **Taux d'acceptation** : Seuls 35% des candidats sont retenus.
 
 ### 2. Système de Séquestre & Code Unique
