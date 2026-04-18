@@ -40,14 +40,14 @@
 |---|---|---|
 | Rôles via `user_roles` + `has_role()` | ✅ | Conforme |
 | Messagerie pré-paiement restreinte | ✅ | `useMessageGuard.ts` |
-| Casier B3 obligatoire / RC Pro optionnelle | ✅ | `DocumentUpload`, `VerificationBanner` |
+| Casier judiciaire retiré (CNI seule obligatoire) | ✅ | `DocumentUpload`, `VerificationBanner`, FAQ, README |
 | Anonymisation téléphone hors fenêtre mission (UI) | ✅ | `BookingContactCard` |
 | Anonymisation téléphone (RPC `get_booking_contact`) | 🟡 | Migration finale à appliquer |
 | Trigger anti-annulation < 3h (UX) | ✅ | `CancelBookingDialog` (alerte + bouton désactivé) |
 | Trigger anti-annulation < 3h (DB) | 🟡 | Migration finale à appliquer |
 | Vue `bookings_walker_safe` | 🟡 | Migration finale à appliquer |
 | Audit RLS automatique | ✅ | **0 finding** au scan sécurité Lovable |
-| Interface admin validation CNI/B3 + motif refus | ✅ | `AdminDashboard.tsx` |
+| Interface admin validation CNI + motif refus | ✅ | `AdminDashboard.tsx` |
 
 ---
 
