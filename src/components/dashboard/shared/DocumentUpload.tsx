@@ -34,7 +34,7 @@ const DOCUMENT_TYPES = [
   },
   { 
     type: 'criminal_record', 
-    label: 'Casier judiciaire (B3)', 
+    label: 'Casier judiciaire (B2)', 
     description: "Extrait datant de moins de 3 mois",
     required: true, 
     icon: Shield,
