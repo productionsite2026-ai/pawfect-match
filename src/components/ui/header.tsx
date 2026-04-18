@@ -79,9 +79,10 @@ export const Header = () => {
   const navLinks = [
     { href: "/", label: "Accueil", icon: Home },
     { label: "Nos services", icon: Dog, isDropdown: true, subLinks: serviceLinks },
-    { href: "/find-walkers?tab=deposer", label: "Déposer une annonce", icon: PlusCircle },
+    { href: "/walkers", label: "Trouver un Accompagnateur", icon: Users },
+    { href: "/walkers#deposer-annonce", label: "Déposer une annonce", icon: PlusCircle },
     { href: "/tarifs", label: "Tarifs", icon: CreditCard },
-    { href: "/nous-sommes-presents", label: "Villes", icon: MapPin },
+    { href: "/nous-sommes-presents", label: "Nos zones", icon: MapPin },
     { href: "/support", label: "Aide", icon: HelpCircle },
   ];
 

@@ -96,7 +96,7 @@ const ServiceGarde = () => {
           description="Confiez votre compagnon à des gardiens passionnés et certifiés. Garde à domicile ou hébergement en environnement familial, avec suivi quotidien et protection complète."
           ctaText="Trouver un gardien"
           ctaLink="/walkers?service=garde"
-          imageAlt="Pet-sitter prenant soin d'un chien heureux dans un salon confortable"
+          imageAlt="Accompagnateur Certifié prenant soin d'un chien heureux dans un salon confortable"
           trustIndicators={[
             { icon: Shield, text: "Gardiens vérifiés" },
             { icon: Camera, text: "Photos quotidiennes" },

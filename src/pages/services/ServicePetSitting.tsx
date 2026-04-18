@@ -117,7 +117,7 @@ const ServicePetSitting = () => {
       <SEOHead
         title="Tout Animal | Garde Multi-Animaux | Chiens, Chats, Oiseaux, NAC | DogWalking"
         description="Garde de tous vos animaux : chiens, chats, oiseaux, rongeurs, reptiles. Accompagnateurs vérifiés partout en France. Preuves photo, protection incluse."
-        keywords="garde animaux, cat sitting, garde chat, garde rongeur, garde oiseau, garde multi-animaux, NAC, Accompagnateur france"
+        keywords="garde animaux, garde chat domicile, garde chat, garde rongeur, garde oiseau, garde multi-animaux, NAC, Accompagnateur france"
         canonicalUrl="https://dogwalking.fr/services/garde-multi-animaux"
         structuredData={serviceJsonLd}
         ogImage={petSittingHero}

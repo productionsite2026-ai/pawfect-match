@@ -19,7 +19,7 @@ export const DEMO_WALKERS = [
   { id: '2', name: 'Julie', lastName: 'Dubois', city: 'Lyon 6e', avatar: demoWalkerSophie, rating: 4.7, reviews: 32, walks: 98, verified: true, experience: 3, hourlyRate: 15, bio: 'Passionnée des animaux, diplômée en comportement canin.' },
   { id: '3', name: 'Maxime', lastName: 'Roux', city: 'Marseille 8e', avatar: demoWalkerLucas, rating: 4.8, reviews: 28, walks: 112, verified: true, experience: 4, hourlyRate: 20, bio: 'Runner et amoureux des chiens. Parcours sportifs.' },
   { id: '4', name: 'Léa', lastName: 'Garcia', city: 'Bordeaux', avatar: demoWalkerSophie, rating: 5.0, reviews: 15, walks: 67, verified: true, experience: 7, hourlyRate: 22, bio: 'Vétérinaire de formation, soins et promenades.' },
-  { id: '5', name: 'Antoine', lastName: 'Martinez', city: 'Toulouse', avatar: demoWalkerLucas, rating: 4.6, reviews: 21, walks: 45, verified: false, experience: 2, hourlyRate: 16, bio: 'Pet-sitter professionnel, disponible week-end.' },
+  { id: '5', name: 'Antoine', lastName: 'Martinez', city: 'Toulouse', avatar: demoWalkerLucas, rating: 4.6, reviews: 21, walks: 45, verified: false, experience: 2, hourlyRate: 16, bio: 'Accompagnateur professionnel, disponible week-end.' },
 ];
 
 export const DEMO_OWNERS = [

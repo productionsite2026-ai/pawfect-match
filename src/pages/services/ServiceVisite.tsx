@@ -80,7 +80,7 @@ const ServiceVisite = () => {
       <SEOHead
         title="Visite à Domicile Chien | Accompagnateurs Vérifiés | DogWalking"
         description="Faites nourrir et câliner votre chien chez vous par un Accompagnateur vérifié. Visite à domicile, soins quotidiens, preuves photo. Réservez en quelques clics."
-        keywords="visite domicile chien, garde multi-animaux maison, nourriture chien, soins animal domicile, cat sitting, visite chat, garde animaux maison"
+        keywords="visite domicile chien, garde multi-animaux maison, nourriture chien, soins animal domicile, garde chat domicile, visite chat, garde animaux maison"
         canonicalUrl="https://dogwalking.fr/services/visite"
         structuredData={serviceJsonLd}
         ogImage={serviceVisiteImg}
@@ -96,7 +96,7 @@ const ServiceVisite = () => {
           description="Votre compagnon reste dans son environnement familier pendant que nos Accompagnateurs vérifiés assurent nourriture, eau fraîche, câlins et sortie hygiénique. La solution idéale pour les journées chargées."
           ctaText="Trouver un visiteur"
           ctaLink="/walkers?service=visite"
-          imageAlt="Pet-sitter nourrissant un chien heureux à domicile dans un appartement parisien"
+          imageAlt="Accompagnateur Certifié nourrissant un chien heureux à domicile dans un appartement parisien"
           trustIndicators={[
             { icon: Clock, text: "30 min de visite" },
             { icon: Camera, text: "Preuves photo" },
