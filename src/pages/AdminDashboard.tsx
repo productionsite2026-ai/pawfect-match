@@ -136,15 +136,25 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleVerifyDocument = async (docId: string, status: 'approved' | 'rejected', reason?: string) => {
+  const handleVerifyDocument = async (docId: string, status: 'approved' | 'rejected') => {
     try {
+      let reason: string | null = null;
+      if (status === 'rejected') {
+        const r = window.prompt("Motif du refus (visible par l'Accompagnateur) :", "Document illisible ou non conforme");
+        if (!r || !r.trim()) {
+          toast.error("Un motif est obligatoire pour refuser un document");
+          return;
+        }
+        reason = r.trim();
+      }
+
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) return;
       const { error } = await supabase.from('walker_documents').update({
         verification_status: status,
         verified_by: session.user.id,
         verified_at: new Date().toISOString(),
-        rejection_reason: status === 'rejected' ? (reason || 'Document non conforme') : null,
+        rejection_reason: reason,
       }).eq('id', docId);
       if (error) throw error;
       
@@ -155,7 +165,7 @@ const AdminDashboard = () => {
           title: status === 'approved' ? '✅ Document validé' : '❌ Document refusé',
           message: status === 'approved'
             ? `Votre ${doc.document_type} a été vérifié et approuvé.`
-            : `Votre ${doc.document_type} a été refusé : ${reason || 'Non conforme'}. Veuillez le renvoyer.`,
+            : `Votre ${doc.document_type} a été refusé : ${reason}. Veuillez le renvoyer.`,
           type: 'verification',
           link: '/walker/dashboard?tab=profil',
         });

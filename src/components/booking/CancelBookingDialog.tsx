@@ -38,10 +38,12 @@ export const CancelBookingDialog = ({
   const [customReason, setCustomReason] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Check if cancellation is within 24h
-  const isWithin24h = scheduledDate 
-    ? new Date(scheduledDate).getTime() - Date.now() < 24 * 60 * 60 * 1000
-    : false;
+  // Check if cancellation is within 3h (interdit) ou 24h (frais possibles)
+  const hoursUntil = scheduledDate
+    ? (new Date(scheduledDate).getTime() - Date.now()) / (60 * 60 * 1000)
+    : Infinity;
+  const isWithin3h = hoursUntil < 3 && hoursUntil > -1;
+  const isWithin24h = hoursUntil < 24;
 
   const handleCancel = async () => {
     if (!reason) {
@@ -84,9 +86,14 @@ export const CancelBookingDialog = ({
       onOpenChange(false);
       onSuccess?.();
     } catch (error: any) {
+      const msg = String(error?.message || "");
+      let userMsg = msg || "Erreur lors de l'annulation";
+      if (msg.includes("cancellation_too_late")) {
+        userMsg = "Annulation impossible à moins de 3h du début. Contactez le support pour un cas exceptionnel.";
+      }
       toast({
         title: "Erreur",
-        description: error.message,
+        description: userMsg,
         variant: "destructive"
       });
     } finally {
@@ -109,7 +116,18 @@ export const CancelBookingDialog = ({
 
         <div className="space-y-6 py-4">
           {/* 24h warning */}
-          {isWithin24h && (
+          {isWithin3h && (
+            <div className="flex items-start gap-3 p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
+              <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+              <div className="text-sm">
+                <p className="font-medium text-destructive">Annulation impossible</p>
+                <p className="text-destructive/80 mt-1">
+                  Vous ne pouvez plus annuler une mission à moins de 3h de son début. Contactez le support pour un cas exceptionnel.
+                </p>
+              </div>
+            </div>
+          )}
+          {isWithin24h && !isWithin3h && (
             <div className="flex items-start gap-3 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
               <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm">
@@ -117,7 +135,7 @@ export const CancelBookingDialog = ({
                   Annulation tardive
                 </p>
                 <p className="text-amber-700 dark:text-amber-500 mt-1">
-                  Cette réservation a lieu dans moins de 24h. Des frais d'annulation peuvent s'appliquer selon les conditions du promeneur.
+                  Cette réservation a lieu dans moins de 24h. Des frais d'annulation peuvent s'appliquer.
                 </p>
               </div>
             </div>
@@ -168,7 +186,7 @@ export const CancelBookingDialog = ({
               variant="destructive"
               onClick={handleCancel}
               className="flex-1 gap-2"
-              disabled={loading || !reason}
+              disabled={loading || !reason || isWithin3h}
             >
               {loading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
