@@ -250,19 +250,31 @@ const Tarifs = () => {
                   <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
                     <Check className="h-4 w-4 text-success" />
                   </div>
-                  <span className="text-sm">Zéro risque de non-paiement</span>
+                  <span className="text-sm">Zéro risque de non-paiement (séquestre DogWalking)</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
                     <Check className="h-4 w-4 text-success" />
                   </div>
-                  <span className="text-sm">Remboursement facilité en cas d'annulation</span>
+                  <span className="text-sm">Code Unique de Validation à 6 chiffres pour libérer les fonds</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
                     <Check className="h-4 w-4 text-success" />
                   </div>
-                  <span className="text-sm">Transparence totale des flux financiers</span>
+                  <span className="text-sm">Commission claire : 15% plateforme, 85% reversés à l'Accompagnateur</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-success" />
+                  </div>
+                  <span className="text-sm">Remboursement facilité en cas d'annulation +3h avant la mission</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-success" />
+                  </div>
+                  <span className="text-sm">Médiation et Protection DogWalking incluses</span>
                 </li>
               </ul>
             </motion.div>
