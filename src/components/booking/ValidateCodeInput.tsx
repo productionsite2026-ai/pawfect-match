@@ -24,9 +24,9 @@ export const ValidateCodeInput = ({ bookingId, onValidated, alreadyValidated }: 
 
   if (alreadyValidated) {
     return (
-      <Card className="border-2 border-green-500/30 bg-green-500/5">
+      <Card className="border-2 border-primary/30 bg-primary/5">
         <CardContent className="py-4 flex items-center gap-3">
-          <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0" />
+          <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
           <div>
             <p className="font-semibold">Mission validée</p>
             <p className="text-sm text-muted-foreground">
