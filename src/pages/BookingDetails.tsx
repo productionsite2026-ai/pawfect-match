@@ -17,6 +17,9 @@ import { OpenDisputeDialog } from "@/components/booking/OpenDisputeDialog";
 import { MissionProofViewer } from "@/components/dashboard/owner/MissionProofViewer";
 import { MissionReport } from "@/components/dashboard/owner/MissionReport";
 import MissionStartButton from "@/components/dashboard/walker/MissionStartButton";
+import { ValidationCodeCard } from "@/components/booking/ValidationCodeCard";
+import { ValidateCodeInput } from "@/components/booking/ValidateCodeInput";
+import { SOSReleaseDialog } from "@/components/booking/SOSReleaseDialog";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -326,7 +329,32 @@ const BookingDetails = () => {
               )}
             </motion.div>
           )}
-          
+
+          {/* === Outil GO : Code Unique de Validation (CDC §8) === */}
+          {/* Côté Propriétaire : afficher le code à transmettre */}
+          {currentUserId === booking.owner_id &&
+            (booking.status === 'confirmed' || booking.status === 'in_progress' || booking.status === 'completed') &&
+            booking.validation_code && (
+              <motion.div variants={itemVariants} className="mt-6">
+                <ValidationCodeCard
+                  code={booking.validation_code}
+                  used={!!booking.validation_code_used_at}
+                />
+              </motion.div>
+            )}
+
+          {/* Côté Accompagnateur : saisie du code pour clôturer la mission */}
+          {currentUserId === booking.walker_id &&
+            (booking.status === 'in_progress' || booking.status === 'completed') && (
+              <motion.div variants={itemVariants} className="mt-6">
+                <ValidateCodeInput
+                  bookingId={booking.id}
+                  alreadyValidated={!!booking.validation_code_used_at || booking.status === 'completed'}
+                  onValidated={fetchBooking}
+                />
+              </motion.div>
+            )}
+
           {/* Mission Start/End Button for walker */}
           {currentUserId === booking.walker_id && (booking.status === 'confirmed' || booking.status === 'in_progress') && (
             <motion.div variants={itemVariants} className="mt-6">
@@ -368,6 +396,12 @@ const BookingDetails = () => {
                         Signaler un incident
                       </Button>
                     )}
+                    {/* SOS exceptionnel — propriétaire seulement, mission en cours sans paiement libéré */}
+                    {currentUserId === booking.owner_id &&
+                      (booking.status === 'confirmed' || booking.status === 'in_progress') &&
+                      !booking.funds_released_at && (
+                        <SOSReleaseDialog bookingId={booking.id} onReleased={fetchBooking} />
+                      )}
                     {booking.status === 'completed' && (
                       <Button 
                         variant="outline" 

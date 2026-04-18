@@ -18,9 +18,13 @@ interface VerificationBannerProps {
 }
 
 const requiredDocs = [
-  { type: "id_card", label: "Pièce d'identité" },
-  { type: "criminal_record", label: "Casier judiciaire" },
-  { type: "insurance", label: "Assurance RC" },
+  { type: "id_card", label: "Pièce d'identité (CNI)" },
+  { type: "criminal_record", label: "Casier judiciaire (B3)" },
+];
+
+// Documents optionnels mais valorisants
+const optionalDocs = [
+  { type: "insurance", label: "Assurance RC Pro (optionnel)" },
 ];
 
 export const VerificationBanner = ({ isVerified, documents, walkerName }: VerificationBannerProps) => {

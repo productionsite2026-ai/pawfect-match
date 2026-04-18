@@ -43,9 +43,9 @@ const DOCUMENT_TYPES = [
   },
   { 
     type: 'insurance', 
-    label: 'Assurance RC Pro', 
-    description: "Attestation en cours de validité",
-    required: true, 
+    label: 'Assurance RC Pro (optionnel)', 
+    description: "Attestation en cours de validité — recommandée mais non obligatoire",
+    required: false, 
     icon: Award,
     acceptedFormats: "application/pdf,image/jpeg,image/png",
     maxSize: 5
