@@ -42,15 +42,6 @@ const DOCUMENT_TYPES = [
     maxSize: 5
   },
   { 
-    type: 'insurance', 
-    label: 'Assurance RC Pro (optionnel)', 
-    description: "Attestation en cours de validité — recommandée mais non obligatoire",
-    required: false, 
-    icon: Award,
-    acceptedFormats: "application/pdf,image/jpeg,image/png",
-    maxSize: 5
-  },
-  { 
     type: 'photo', 
     label: 'Photo de profil', 
     description: "Photo professionnelle de vous",

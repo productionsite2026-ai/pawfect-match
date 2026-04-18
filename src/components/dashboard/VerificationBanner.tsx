@@ -19,7 +19,6 @@ interface VerificationBannerProps {
 
 const requiredDocs = [
   { type: "id_card", label: "Pièce d'identité (CNI)" },
-  { type: "criminal_record", label: "Casier judiciaire (B2)" },
 ];
 
 // Documents optionnels mais valorisants
