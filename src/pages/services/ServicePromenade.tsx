@@ -86,7 +86,7 @@ const ServicePromenade = () => {
       <SEOHead
         title="Promenade de Chien | Accompagnateurs Certifiés Vérifiés | DogWalking"
         description="Service de promenade de chien par des professionnels vérifiés partout en France. Preuves photo obligatoires, protection incluse, paiement sécurisé. Réservez en quelques clics."
-        keywords="promenade chien, dog walking, promeneur canin, balade chien, sortie chien, promeneur professionnel, dog walker france"
+        keywords="promenade chien, accompagnateur canin, promeneur canin, balade chien, sortie chien, promeneur professionnel, accompagnateur certifié france"
         canonicalUrl="https://dogwalking.fr/services/promenade"
         structuredData={serviceJsonLd}
         ogImage={servicePromenadeImg}

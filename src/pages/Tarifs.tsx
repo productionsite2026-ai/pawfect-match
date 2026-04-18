@@ -243,7 +243,7 @@ const Tarifs = () => {
             >
               <h3 className="text-2xl font-bold mb-4">Pourquoi le paiement en attente ?</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Le paiement en attente protège les deux parties. Le Propriétaire a l'assurance que son argent n'est libéré qu'après communication du code de fin de service. L'Accompagnateur Certifié a la garantie que les fonds sont déjà réservés et disponibles.
+                Le paiement en attente protège les deux parties. Le Propriétaire a la garantie que son argent n'est libéré qu'après communication du code unique de validation en fin de service. L'Accompagnateur Certifié a la certitude que les fonds sont déjà réservés et disponibles via le séquestre DogWalking.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
