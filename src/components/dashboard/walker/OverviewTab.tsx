@@ -7,6 +7,7 @@ import TodayMissions from "./TodayMissions";
 import WalkerProfileHeader from "./WalkerProfileHeader";
 import WalkerQuickStats from "./WalkerQuickStats";
 import BadgesDisplay from "./BadgesDisplay";
+import { StripeConnectOnboarding } from "./StripeConnectOnboarding";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award } from "lucide-react";
 
@@ -145,6 +146,9 @@ const WalkerOverviewTab = ({ stats, walkerProfile, onNavigate }: OverviewTabProp
         totalReviews={stats.totalReviews}
         pendingRequests={stats.pendingRequests}
       />
+
+      {/* Configuration paiements Stripe Connect */}
+      <StripeConnectOnboarding />
 
       {/* Badges de certification */}
       <Card className="shadow-lg">
