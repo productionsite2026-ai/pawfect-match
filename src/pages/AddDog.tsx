@@ -201,9 +201,50 @@ const AddDog = () => {
                   <Textarea 
                     id="medical" 
                     name="medical"
-                    placeholder="Allergies, traitements, précautions particulières..."
+                    placeholder="Antécédents, précautions particulières..."
                     rows={3}
                   />
+                </motion.div>
+
+                {/* Carnet de santé numérique */}
+                <motion.div variants={itemVariants} className="space-y-4 p-4 rounded-xl border-2 border-dashed">
+                  <p className="text-sm font-bold flex items-center gap-2">
+                    <Heart className="h-4 w-4 text-primary" />
+                    Carnet de santé numérique
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="allergies">Allergies connues</Label>
+                      <Input id="allergies" name="allergies" placeholder="Pollen, poulet..." />
+                    </div>
+                    <div>
+                      <Label htmlFor="treatments">Traitements en cours</Label>
+                      <Input id="treatments" name="treatments" placeholder="Antiparasitaire, ..." />
+                    </div>
+                    <div>
+                      <Label htmlFor="vet_name">Nom du vétérinaire</Label>
+                      <Input id="vet_name" name="vet_name" placeholder="Dr Martin" />
+                    </div>
+                    <div>
+                      <Label htmlFor="vet_phone">Téléphone vétérinaire</Label>
+                      <Input id="vet_phone" name="vet_phone" type="tel" placeholder="01 23 45 67 89" />
+                    </div>
+                    <div>
+                      <Label htmlFor="emergency_name">Contact d'urgence</Label>
+                      <Input id="emergency_name" name="emergency_name" placeholder="Nom" />
+                    </div>
+                    <div>
+                      <Label htmlFor="emergency_phone">Téléphone d'urgence</Label>
+                      <Input id="emergency_phone" name="emergency_phone" type="tel" placeholder="06 ..." />
+                    </div>
+                    <div className="md:col-span-2">
+                      <Label htmlFor="microchip">N° de puce / tatouage</Label>
+                      <Input id="microchip" name="microchip" placeholder="250268..." />
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Ces informations sont visibles uniquement par l'Accompagnateur réservé pour votre chien.
+                  </p>
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="flex gap-4">
