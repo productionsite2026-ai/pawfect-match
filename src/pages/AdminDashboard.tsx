@@ -37,6 +37,7 @@ const AdminDashboard = () => {
   const [recentBookings, setRecentBookings] = useState<any[]>([]);
   const [recentUsers, setRecentUsers] = useState<any[]>([]);
   const [pendingDocuments, setPendingDocuments] = useState<any[]>([]);
+  const [openDisputes, setOpenDisputes] = useState<any[]>([]);
 
   useEffect(() => {
     checkAuth();
@@ -115,6 +116,15 @@ const AdminDashboard = () => {
         setPendingDocuments([]);
       }
 
+      // Open disputes (LOT 5 — Médiation)
+      const { data: disputesData } = await supabase
+        .from('disputes')
+        .select('*')
+        .in('status', ['open', 'investigating'])
+        .order('created_at', { ascending: false })
+        .limit(20);
+      setOpenDisputes(disputesData || []);
+
       setStats({
         totalUsers: profilesData?.length || 0,
         totalOwners: owners,
@@ -177,6 +187,26 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleUpdateDispute = async (disputeId: string, status: 'investigating' | 'resolved') => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+      const patch: any = { status, updated_at: new Date().toISOString() };
+      if (status === 'resolved') {
+        patch.resolved_at = new Date().toISOString();
+        patch.resolved_by = session.user.id;
+        const note = window.prompt("Note de résolution (visible en interne) :", "");
+        if (note) patch.admin_notes = note;
+      }
+      const { error } = await supabase.from('disputes').update(patch).eq('id', disputeId);
+      if (error) throw error;
+      toast.success(status === 'resolved' ? "Litige résolu" : "Marqué en investigation");
+      fetchAdminStats();
+    } catch (e: any) {
+      toast.error(e.message);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -228,13 +258,21 @@ const AdminDashboard = () => {
         </div>
 
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="bg-background border-2 p-1 h-auto rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-1">
+          <TabsList className="bg-background border-2 p-1 h-auto rounded-2xl grid grid-cols-2 md:grid-cols-5 gap-1">
             <TabsTrigger value="overview" className="rounded-xl font-bold py-2.5">Vue d'ensemble</TabsTrigger>
             <TabsTrigger value="verification" className="rounded-xl font-bold py-2.5 relative">
               Vérifications
               {pendingDocuments.length > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-destructive text-white text-[10px] rounded-full flex items-center justify-center">
                   {pendingDocuments.length}
+                </span>
+              )}
+            </TabsTrigger>
+            <TabsTrigger value="disputes" className="rounded-xl font-bold py-2.5 relative">
+              Litiges
+              {openDisputes.length > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-amber-500 text-white text-[10px] rounded-full flex items-center justify-center">
+                  {openDisputes.length}
                 </span>
               )}
             </TabsTrigger>
@@ -345,6 +383,57 @@ const AdminDashboard = () => {
                           <Button size="sm" variant="destructive" className="font-bold" onClick={() => handleVerifyDocument(doc.id, 'rejected')}>
                             <FileX className="h-4 w-4 mr-2" /> Refuser
                           </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="disputes">
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle>File de médiation — Litiges</CardTitle>
+                <CardDescription>Dossiers ouverts ou en cours d'investigation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {openDisputes.length === 0 ? (
+                  <div className="text-center py-12">
+                    <Scale className="h-12 w-12 text-muted-foreground/30 mx-auto mb-3" />
+                    <p className="text-muted-foreground font-medium">Aucun litige en attente</p>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {openDisputes.map((d: any) => (
+                      <div key={d.id} className="p-4 border-2 rounded-2xl space-y-2">
+                        <div className="flex items-start justify-between gap-3 flex-wrap">
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <Badge variant={d.status === 'open' ? 'destructive' : 'secondary'} className="font-bold uppercase text-[10px]">
+                                {d.status}
+                              </Badge>
+                              <Badge variant="outline" className="font-bold text-[10px]">{d.type}</Badge>
+                            </div>
+                            <p className="font-bold text-foreground">{d.reason}</p>
+                            {d.description && (
+                              <p className="text-sm text-muted-foreground mt-1">{d.description}</p>
+                            )}
+                            <p className="text-xs text-muted-foreground mt-2">
+                              Booking : <span className="font-mono">{d.booking_id.slice(0, 8)}…</span> · Ouvert le {new Date(d.created_at).toLocaleDateString('fr-FR')}
+                            </p>
+                          </div>
+                          <div className="flex gap-2">
+                            {d.status === 'open' && (
+                              <Button size="sm" variant="outline" className="font-bold" onClick={() => handleUpdateDispute(d.id, 'investigating')}>
+                                Investiguer
+                              </Button>
+                            )}
+                            <Button size="sm" className="bg-green-600 hover:bg-green-700 font-bold" onClick={() => handleUpdateDispute(d.id, 'resolved')}>
+                              <CheckCircle className="h-4 w-4 mr-1" /> Résoudre
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     ))}

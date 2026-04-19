@@ -11,23 +11,28 @@ interface ReviewDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   bookingId: string;
-  reviewedId: string; // The walker's user_id
+  reviewedId: string;
   dogName?: string;
+  /** 'owner_to_walker' (par défaut) ou 'walker_to_owner' */
+  reviewType?: 'owner_to_walker' | 'walker_to_owner';
   onSuccess?: () => void;
 }
 
-export const ReviewDialog = ({ 
-  open, 
-  onOpenChange, 
-  bookingId, 
-  reviewedId, 
+export const ReviewDialog = ({
+  open,
+  onOpenChange,
+  bookingId,
+  reviewedId,
   dogName,
-  onSuccess 
+  reviewType = 'owner_to_walker',
+  onSuccess,
 }: ReviewDialogProps) => {
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const isWalkerReview = reviewType === 'walker_to_owner';
 
   const handleSubmit = async () => {
     if (rating === 0) {
@@ -50,8 +55,9 @@ export const ReviewDialog = ({
         reviewer_id: session.user.id,
         reviewed_id: reviewedId,
         rating,
-        comment: comment.trim() || null
-      });
+        comment: comment.trim() || null,
+        review_type: reviewType,
+      } as any);
 
       if (error) throw error;
 
@@ -88,9 +94,13 @@ export const ReviewDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-xl">Laisser un avis</DialogTitle>
+          <DialogTitle className="text-xl">
+            {isWalkerReview ? "Noter le propriétaire" : "Laisser un avis"}
+          </DialogTitle>
           <DialogDescription>
-            Comment s'est passée la prestation{dogName ? ` pour ${dogName}` : ""} ?
+            {isWalkerReview
+              ? "Comment s'est passé le contact avec le propriétaire ?"
+              : `Comment s'est passée la prestation${dogName ? ` pour ${dogName}` : ""} ?`}
           </DialogDescription>
         </DialogHeader>
 
