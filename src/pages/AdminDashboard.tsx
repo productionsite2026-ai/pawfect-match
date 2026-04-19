@@ -37,6 +37,7 @@ const AdminDashboard = () => {
   const [recentBookings, setRecentBookings] = useState<any[]>([]);
   const [recentUsers, setRecentUsers] = useState<any[]>([]);
   const [pendingDocuments, setPendingDocuments] = useState<any[]>([]);
+  const [openDisputes, setOpenDisputes] = useState<any[]>([]);
 
   useEffect(() => {
     checkAuth();
@@ -114,6 +115,15 @@ const AdminDashboard = () => {
       } else {
         setPendingDocuments([]);
       }
+
+      // Open disputes (LOT 5 — Médiation)
+      const { data: disputesData } = await supabase
+        .from('disputes')
+        .select('*')
+        .in('status', ['open', 'investigating'])
+        .order('created_at', { ascending: false })
+        .limit(20);
+      setOpenDisputes(disputesData || []);
 
       setStats({
         totalUsers: profilesData?.length || 0,
