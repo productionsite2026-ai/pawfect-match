@@ -238,13 +238,21 @@ const AdminDashboard = () => {
         </div>
 
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="bg-background border-2 p-1 h-auto rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-1">
+          <TabsList className="bg-background border-2 p-1 h-auto rounded-2xl grid grid-cols-2 md:grid-cols-5 gap-1">
             <TabsTrigger value="overview" className="rounded-xl font-bold py-2.5">Vue d'ensemble</TabsTrigger>
             <TabsTrigger value="verification" className="rounded-xl font-bold py-2.5 relative">
               Vérifications
               {pendingDocuments.length > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-destructive text-white text-[10px] rounded-full flex items-center justify-center">
                   {pendingDocuments.length}
+                </span>
+              )}
+            </TabsTrigger>
+            <TabsTrigger value="disputes" className="rounded-xl font-bold py-2.5 relative">
+              Litiges
+              {openDisputes.length > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-amber-500 text-white text-[10px] rounded-full flex items-center justify-center">
+                  {openDisputes.length}
                 </span>
               )}
             </TabsTrigger>
