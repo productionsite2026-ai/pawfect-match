@@ -62,7 +62,14 @@ const AddDog = () => {
         weight: formData.get('weight') ? parseFloat(formData.get('weight') as string) : null,
         temperament: formData.get('temperament') as string || null,
         special_needs: formData.get('medical') as string || null,
-      });
+        allergies: formData.get('allergies') as string || null,
+        current_treatments: formData.get('treatments') as string || null,
+        vet_name: formData.get('vet_name') as string || null,
+        vet_phone: formData.get('vet_phone') as string || null,
+        emergency_contact_name: formData.get('emergency_name') as string || null,
+        emergency_contact_phone: formData.get('emergency_phone') as string || null,
+        microchip_number: formData.get('microchip') as string || null,
+      } as any);
 
       if (error) throw error;
 
