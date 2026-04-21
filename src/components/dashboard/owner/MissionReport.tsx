@@ -100,7 +100,7 @@ CHIEN
 Nom : ${booking?.dogs?.name || 'N/A'}
 Race : ${booking?.dogs?.breed || 'N/A'}
 
-PROMENEUR
+ACCOMPAGNATEUR CERTIFIÉ
 ---------
 Nom : ${walker?.first_name || 'N/A'}
 Note moyenne : ${walker?.rating ? `${walker.rating.toFixed(1)}/5` : 'N/A'}
