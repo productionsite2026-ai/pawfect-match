@@ -148,11 +148,11 @@ const WalkersTab = () => {
             <Heart className="h-16 w-16 mx-auto mb-4 text-muted-foreground/30" />
             <h3 className="text-xl font-semibold mb-2">Aucun favori</h3>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Explorez nos promeneurs vérifiés et ajoutez vos préférés pour les retrouver facilement
+              Explorez nos Accompagnateurs Certifiés vérifiés et ajoutez vos préférés pour les retrouver facilement
             </p>
             <Button onClick={() => navigate('/walkers')} size="lg" className="gap-2">
               <Search className="h-4 w-4" />
-              Trouver un promeneur
+              Trouver un Accompagnateur Certifié
             </Button>
           </CardContent>
         </Card>

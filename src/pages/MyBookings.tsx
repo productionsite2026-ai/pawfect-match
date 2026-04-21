@@ -222,7 +222,7 @@ const MyBookings = () => {
                   <Calendar className="h-16 w-16 mx-auto mb-4 text-muted-foreground opacity-50" />
                   <h3 className="text-xl font-semibold mb-2">Aucune réservation à venir</h3>
                   <p className="text-muted-foreground">
-                    Trouvez un promeneur pour réserver votre prochaine promenade
+                    Trouvez un Accompagnateur Certifié pour réserver votre prochaine promenade
                   </p>
                 </motion.div>
               ) : (

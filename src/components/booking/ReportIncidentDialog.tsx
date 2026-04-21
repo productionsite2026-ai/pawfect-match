@@ -17,8 +17,8 @@ interface ReportIncidentDialogProps {
 }
 
 const INCIDENT_TYPES = [
-  { value: "late", label: "Retard", description: "Le promeneur est en retard" },
-  { value: "no_show", label: "Absence", description: "Le promeneur ne s'est pas présenté" },
+  { value: "late", label: "Retard", description: "Le Accompagnateur Certifié est en retard" },
+  { value: "no_show", label: "Absence", description: "Le Accompagnateur Certifié ne s'est pas présenté" },
   { value: "early_end", label: "Fin anticipée", description: "La prestation s'est terminée trop tôt" },
   { value: "behavior", label: "Comportement", description: "Problème de comportement" },
   { value: "other", label: "Autre", description: "Autre incident" }

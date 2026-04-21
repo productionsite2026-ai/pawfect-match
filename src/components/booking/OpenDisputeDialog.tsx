@@ -22,7 +22,7 @@ const DISPUTE_TYPES = [
   { value: "payment", label: "Problème de paiement", description: "Contestation sur le montant ou le paiement" },
   { value: "service_quality", label: "Qualité de service", description: "La prestation ne correspond pas aux attentes" },
   { value: "damage", label: "Dommage ou perte", description: "Dommage causé pendant la prestation" },
-  { value: "misconduct", label: "Comportement inapproprié", description: "Comportement problématique du promeneur/Propriétaire" },
+  { value: "misconduct", label: "Comportement inapproprié", description: "Comportement problématique du Accompagnateur Certifié/Propriétaire" },
   { value: "other", label: "Autre", description: "Autre type de litige" }
 ];
 

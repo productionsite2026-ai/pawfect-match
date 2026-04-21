@@ -391,7 +391,7 @@ export const WalkProofUpload: React.FC<WalkProofUploadProps> = ({
           <div className="flex items-center gap-3 p-4 bg-muted/50 rounded-lg">
             <AlertCircle className="h-5 w-5 text-muted-foreground" />
             <p className="text-sm text-muted-foreground">
-              Le promeneur n'a pas encore envoyé de photos pour cette promenade.
+              Le Accompagnateur Certifié n'a pas encore envoyé de photos pour cette promenade.
             </p>
           </div>
         )}

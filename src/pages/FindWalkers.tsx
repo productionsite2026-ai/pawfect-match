@@ -10,7 +10,7 @@ const FindWalkers = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Trouver un Accompagnateur de Confiance | DogWalking"
-        description="Trouvez facilement un promeneur ou gardien vérifié près de chez vous. Promenade, garde, visites : consultez les profils et réservez en quelques clics."
+        description="Trouvez facilement un Accompagnateur Certifié ou gardien vérifié près de chez vous. Promenade, garde, visites : consultez les profils et réservez en quelques clics."
         canonical="https://dogwalking.fr/find-walkers"
       />
       <Header />

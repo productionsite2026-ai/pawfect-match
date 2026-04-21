@@ -128,7 +128,7 @@ const ZonesCitiesSection = () => {
             <MapPin className="h-3.5 w-3.5" /> Île-de-France
           </span>
           <h2 className="text-3xl font-bold text-foreground mt-2 mb-4">Nos Accompagnateurs Certifiés en Île-de-France</h2>
-          <p className="text-muted-foreground">Un réseau de promeneurs de confiance dans les principales villes de la région parisienne.</p>
+          <p className="text-muted-foreground">Un réseau de Accompagnateurs Certifiés de confiance dans les principales villes de la région parisienne.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">

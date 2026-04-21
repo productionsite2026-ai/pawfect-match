@@ -42,7 +42,7 @@ const ZonesContactSection = () => {
   const resetForm = () => { setStep(1); setSelectedService(""); setUrgency(""); setDetails(""); setName(""); setPhone(""); setEmail(""); setCity(""); };
 
   const handleSubmit = () => {
-    toast({ title: "✅ Demande envoyée !", description: "Nous vous recontactons sous 24h pour trouver le promeneur idéal." });
+    toast({ title: "✅ Demande envoyée !", description: "Nous vous recontactons sous 24h pour trouver le Accompagnateur Certifié idéal." });
     resetForm();
   };
 
@@ -51,12 +51,12 @@ const ZonesContactSection = () => {
       <div className="container mx-auto px-4">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20 mb-4">
-            🐕 Trouvez votre promeneur
+            🐕 Trouvez votre Accompagnateur Certifié
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
             Demande de Service — Trouvez un Accompagnateur
           </h2>
-          <p className="text-muted-foreground text-lg">Décrivez votre besoin, on s'occupe de trouver le promeneur parfait près de chez vous.</p>
+          <p className="text-muted-foreground text-lg">Décrivez votre besoin, on s'occupe de trouver le Accompagnateur Certifié parfait près de chez vous.</p>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
@@ -109,7 +109,7 @@ const ZonesContactSection = () => {
               {step === 3 && (
                 <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                   <h3 className="text-lg font-bold text-foreground mb-1">Vos coordonnées</h3>
-                  <p className="text-sm text-muted-foreground mb-6">Pour vous recontacter avec le promeneur idéal.</p>
+                  <p className="text-sm text-muted-foreground mb-6">Pour vous recontacter avec le Accompagnateur Certifié idéal.</p>
                   <div className="space-y-4">
                     <Input placeholder="Votre nom *" value={name} onChange={(e) => setName(e.target.value)} />
                     <Input placeholder="Téléphone *" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />

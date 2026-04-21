@@ -40,7 +40,7 @@ export const FavoriteWalkers = ({
           <Heart className="h-5 w-5 text-heart fill-heart-light" />
           Accompagnateur Certifiés favoris
         </CardTitle>
-        <CardDescription>{walkers.length} promeneur(s) favori(s)</CardDescription>
+        <CardDescription>{walkers.length} Accompagnateur Certifié(s) favori(s)</CardDescription>
       </CardHeader>
       <CardContent>
         {walkers.length === 0 ? (
@@ -50,10 +50,10 @@ export const FavoriteWalkers = ({
             </div>
             <h3 className="font-semibold mb-2">Aucun favori</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Ajoutez des promeneurs en favoris pour les retrouver facilement
+              Ajoutez des Accompagnateurs Certifiés en favoris pour les retrouver facilement
             </p>
             <Button variant="outline" onClick={() => navigate('/walkers')}>
-              Découvrir les promeneurs
+              Découvrir les Accompagnateurs Certifiés
             </Button>
           </div>
         ) : (

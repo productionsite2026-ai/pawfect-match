@@ -85,12 +85,12 @@ export const UpcomingBookings = ({
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               {type === 'owner' 
-                ? 'Trouvez un promeneur pour votre compagnon' 
+                ? 'Trouvez un Accompagnateur Certifié pour votre compagnon' 
                 : 'Les nouvelles demandes apparaîtront ici'}
             </p>
             {type === 'owner' && (
               <Button onClick={() => navigate('/walkers')}>
-                Trouver un promeneur
+                Trouver un Accompagnateur Certifié
               </Button>
             )}
           </div>

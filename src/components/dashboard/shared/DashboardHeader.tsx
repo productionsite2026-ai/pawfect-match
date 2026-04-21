@@ -53,7 +53,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             <div className="flex items-center gap-1.5 mb-0.5">
               <PawPrint className="h-4 w-4 text-white/70" />
               <span className="text-xs font-medium text-white/70">
-                {isOwner ? 'Mon espace' : 'Espace promeneur'}
+                {isOwner ? 'Mon espace' : 'Espace Accompagnateur Certifié'}
               </span>
             </div>
             <h1 className="text-lg font-bold leading-tight">
