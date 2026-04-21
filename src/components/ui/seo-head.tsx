@@ -30,7 +30,7 @@ export const SEOHead = ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "DogWalking",
-    "description": "Plateforme de promenade et garde de chiens en France avec promeneurs vérifiés",
+    "description": "Plateforme de promenade et garde de chiens en France avec Accompagnateurs Certifiés vérifiés",
     "url": baseUrl,
     "logo": `${baseUrl}/favicon.ico`,
     "priceRange": "€€",

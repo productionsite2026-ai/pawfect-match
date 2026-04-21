@@ -5,7 +5,7 @@ export const FeaturesSection = () => {
     {
       icon: Shield,
       title: "Vérification triple",
-      description: "Chaque promeneur est rigoureusement sélectionné et vérifié. Validation manuelle par notre équipe.",
+      description: "Chaque Accompagnateur Certifié est rigoureusement sélectionné et vérifié. Validation manuelle par notre équipe.",
       badge: "Sécurité maximale"
     },
     {
@@ -70,7 +70,7 @@ export const FeaturesSection = () => {
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             La seule plateforme française avec preuves photo/vidéo obligatoires, 
-            paiement sécurisé et vérification triple des promeneurs.
+            paiement sécurisé et vérification triple des Accompagnateurs Certifiés.
           </p>
         </div>
 
