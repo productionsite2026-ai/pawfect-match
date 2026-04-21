@@ -14,7 +14,7 @@ interface Zone {
 
 const activeZones: Zone[] = [
   { name: "Paris", description: "Tous les arrondissements couverts. Accompagnateurs Certifiés disponibles 7j/7 pour vos compagnons.", depts: "20 arrondissements", color: "bg-primary/5 border-primary/20", icon: Dog, active: true },
-  { name: "Île-de-France", description: "Réseau dense de promeneurs vérifiés dans toute la région parisienne.", depts: "77, 78, 91, 92, 93, 94, 95", color: "bg-emerald-500/5 border-emerald-500/20", icon: PawPrint, active: true },
+  { name: "Île-de-France", description: "Réseau dense de Accompagnateurs Certifiés vérifiés dans toute la région parisienne.", depts: "77, 78, 91, 92, 93, 94, 95", color: "bg-emerald-500/5 border-emerald-500/20", icon: PawPrint, active: true },
   { name: "Petite Couronne", description: "Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne : couverture rapide.", depts: "92, 93, 94", color: "bg-orange-500/5 border-orange-500/20", icon: Home, active: true },
   { name: "Grande Couronne", description: "Yvelines, Essonne, Val-d'Oise, Seine-et-Marne : service en expansion.", depts: "77, 78, 91, 95", color: "bg-violet-500/5 border-violet-500/20", icon: Eye, active: true },
 ];
@@ -83,7 +83,7 @@ const ZonesRegionsSection = () => {
             Nos Zones d'Intervention en France
           </h2>
           <p className="text-muted-foreground">
-            DogWalking couvre prioritairement Paris et toute l'Île-de-France, avec des promeneurs vérifiés et disponibles 7 jours sur 7.
+            DogWalking couvre prioritairement Paris et toute l'Île-de-France, avec des Accompagnateurs Certifiés vérifiés et disponibles 7 jours sur 7.
           </p>
         </motion.div>
 

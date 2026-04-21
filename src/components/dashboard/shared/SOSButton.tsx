@@ -81,9 +81,9 @@ export const SOSButton: React.FC<SOSButtonProps> = ({
       }
 
       const alertMessages = {
-        medical: "🚨 URGENCE MÉDICALE - Le promeneur a besoin d'assistance médicale",
+        medical: "🚨 URGENCE MÉDICALE - Le Accompagnateur Certifié a besoin d'assistance médicale",
         dog: "🐕 URGENCE CHIEN - Un problème est survenu avec le chien",
-        danger: "⚠️ SITUATION DANGEREUSE - Le promeneur signale un danger"
+        danger: "⚠️ SITUATION DANGEREUSE - Le Accompagnateur Certifié signale un danger"
       };
 
       // Send notification to owner

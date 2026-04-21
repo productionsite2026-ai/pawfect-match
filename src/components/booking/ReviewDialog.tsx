@@ -144,7 +144,7 @@ export const ReviewDialog = ({
               className="resize-none"
             />
             <p className="text-xs text-muted-foreground mt-1.5">
-              Votre avis aide les autres Propriétaires à choisir leur promeneur
+              Votre avis aide les autres Propriétaires à choisir leur Accompagnateur Certifié
             </p>
           </div>
 

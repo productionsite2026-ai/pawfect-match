@@ -150,7 +150,7 @@ const AdvancedSettings = ({ userType }: AdvancedSettingsProps) => {
             <div>
               <p className="font-medium">Profil visible</p>
               <p className="text-sm text-muted-foreground">
-                {userType === "walker" ? "Apparaître dans les recherches" : "Visible par les promeneurs"}
+                {userType === "walker" ? "Apparaître dans les recherches" : "Visible par les Accompagnateurs Certifiés"}
               </p>
             </div>
             <Switch 

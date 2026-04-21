@@ -94,7 +94,7 @@ const BadgesDisplay = ({
       color: 'text-orange-600',
       bgColor: 'bg-orange-100 dark:bg-orange-900/30',
       earned: totalWalks >= 10 && totalWalks < 50,
-      description: 'Nouveau promeneur prometteur'
+      description: 'Nouveau Accompagnateur Certifié prometteur'
     },
     {
       id: 'complete',

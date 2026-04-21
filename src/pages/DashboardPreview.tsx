@@ -12,7 +12,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 /**
  * Page de redirection automatique selon le type d'utilisateur
  * - Si connecté en tant que Propriétaire → /dashboard-proprietaire
- * - Si connecté en tant que promeneur → /dashboard-promeneur
+ * - Si connecté en tant que Accompagnateur Certifié → //dashboard-promeneur
  * - Si non connecté → affiche les options d'inscription
  */
 const DashboardPreview = () => {
@@ -38,7 +38,7 @@ const DashboardPreview = () => {
           .single();
 
         if (profile?.user_type === 'walker') {
-          navigate('/dashboard-promeneur', { replace: true });
+          navigate('//dashboard-promeneur', { replace: true });
           return;
         } else if (profile?.user_type === 'owner') {
           navigate('/dashboard-proprietaire', { replace: true });
@@ -73,7 +73,7 @@ const DashboardPreview = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Choisir mon espace | DogWalking"
-        description="Accédez à votre espace Propriétaire ou promeneur sur DogWalking"
+        description="Accédez à votre espace Propriétaire ou Accompagnateur Certifié sur DogWalking"
       />
       <Header />
       
@@ -88,7 +88,7 @@ const DashboardPreview = () => {
             Bienvenue sur <span className="text-primary">DogWalking</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            La plateforme qui connecte les Propriétaires de chiens avec des promeneurs certifiés et de confiance.
+            La plateforme qui connecte les Propriétaires de chiens avec des Accompagnateurs Certifiés et de confiance.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ const DashboardPreview = () => {
                 </div>
                 <CardTitle className="text-2xl text-foreground">Espace Propriétaire</CardTitle>
                 <CardDescription className="text-base">
-                  Vous avez un ou plusieurs chiens et cherchez un promeneur de confiance
+                  Vous avez un ou plusieurs chiens et cherchez un Accompagnateur Certifié de confiance
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -126,7 +126,7 @@ const DashboardPreview = () => {
                   </li>
                   <li className="flex items-center gap-3 text-muted-foreground">
                     <Star className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>Avis et notes des promeneurs</span>
+                    <span>Avis et notes des Accompagnateurs Certifiés</span>
                   </li>
                 </ul>
                 <Button 
@@ -153,7 +153,7 @@ const DashboardPreview = () => {
                 </div>
                 <CardTitle className="text-2xl text-foreground">Espace Accompagnateur</CardTitle>
                 <CardDescription className="text-base">
-                  Vous souhaitez devenir promeneur certifié et gagner de l'argent
+                  Vous souhaitez devenir Accompagnateur Certifié et gagner de l'argent
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -181,7 +181,7 @@ const DashboardPreview = () => {
                   className="w-full gap-2 mt-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
                   size="lg"
                 >
-                  Je suis promeneur <ArrowRight className="h-4 w-4" />
+                  Je suis Accompagnateur Certifié <ArrowRight className="h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>

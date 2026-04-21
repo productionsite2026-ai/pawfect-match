@@ -36,7 +36,7 @@ export const HowItWorksSection = () => {
       number: "4",
       icon: ThumbsUp,
       title: "Validez le paiement",
-      description: "Communiquez le code de fin de service à l'Accompagnateur pour libérer le paiement. Option « Le promeneur n'a plus de batterie » disponible pour valider à distance.",
+      description: "Communiquez le code de fin de service à l'Accompagnateur pour libérer le paiement. Option « Le Accompagnateur Certifié n'a plus de batterie » disponible pour valider à distance.",
       highlight: "Vous gardez le contrôle",
       image: paiementValideApp
     }

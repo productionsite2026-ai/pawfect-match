@@ -91,7 +91,7 @@ const FavoritesTab = () => {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Rechercher un promeneur..."
+            placeholder="Rechercher un Accompagnateur Certifié..."
             className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-muted text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
         </div>
       )}
@@ -104,10 +104,10 @@ const FavoritesTab = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12">
           <Heart className="w-12 h-12 text-muted-foreground/30 mx-auto mb-3" />
           <p className="font-semibold text-foreground">Aucun favori</p>
-          <p className="text-xs text-muted-foreground mt-1">Ajoutez des promeneurs en favoris</p>
+          <p className="text-xs text-muted-foreground mt-1">Ajoutez des Accompagnateurs Certifiés en favoris</p>
           <motion.button whileTap={{ scale: 0.95 }} onClick={() => navigate("/find-walkers")}
             className="mt-4 px-4 py-2 rounded-full gradient-primary text-white text-xs font-bold">
-            🔍 Trouver des promeneurs
+            🔍 Trouver des Accompagnateurs Certifiés
           </motion.button>
         </motion.div>
       ) : (

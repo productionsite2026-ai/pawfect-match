@@ -170,7 +170,7 @@ const BookingDetails = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`Réservation #${id?.slice(0, 8)} | DogWalking`}
-        description="Détails de votre réservation : chien, promeneur, date, heure et prix."
+        description="Détails de votre réservation : chien, Accompagnateur Certifié, date, heure et prix."
         noindex
       />
       

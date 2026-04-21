@@ -26,7 +26,7 @@ const caseStudies = getCaseStudiesByService("promenade");
 const promenadeFAQs = [
   {
     question: "Combien de temps dure une promenade de chien standard avec DogWalking ?",
-    answer: "Nos promenades durent entre 30 minutes et 2 heures selon vos besoins. La durée la plus demandée est de 45 minutes à 1 heure, idéale pour une bonne dépense d'énergie. Chaque promeneur affiche ses créneaux disponibles sur son profil."
+    answer: "Nos promenades durent entre 30 minutes et 2 heures selon vos besoins. La durée la plus demandée est de 45 minutes à 1 heure, idéale pour une bonne dépense d'énergie. Chaque Accompagnateur Certifié affiche ses créneaux disponibles sur son profil."
   },
   {
     question: "Mon chien peut-il être promené avec d'autres chiens ?",
@@ -42,7 +42,7 @@ const promenadeFAQs = [
   },
   {
     question: "Puis-je suivre la promenade de mon chien en temps réel ?",
-    answer: "Chaque promeneur envoie obligatoirement des preuves photo et vidéo pendant et après la promenade via notre plateforme sécurisée. Vous recevez une notification à chaque envoi. La plupart des Accompagnateurs partagent plusieurs photos tout au long de la balade pour votre tranquillité."
+    answer: "Chaque Accompagnateur Certifié envoie obligatoirement des preuves photo et vidéo pendant et après la promenade via notre plateforme sécurisée. Vous recevez une notification à chaque envoi. La plupart des Accompagnateurs partagent plusieurs photos tout au long de la balade pour votre tranquillité."
   },
   {
     question: "Mon chien a des besoins médicaux, est-ce possible ?",
@@ -86,7 +86,7 @@ const ServicePromenade = () => {
       <SEOHead
         title="Promenade de Chien | Accompagnateurs Certifiés Vérifiés | DogWalking"
         description="Service de promenade de chien par des professionnels vérifiés partout en France. Preuves photo obligatoires, protection incluse, paiement sécurisé. Réservez en quelques clics."
-        keywords="promenade chien, accompagnateur canin, promeneur canin, balade chien, sortie chien, promeneur professionnel, accompagnateur certifié france"
+        keywords="promenade chien, accompagnateur canin, Accompagnateur Certifié canin, balade chien, sortie chien, Accompagnateur Certifié professionnel, accompagnateur certifié france"
         canonicalUrl="https://dogwalking.fr/services/promenade"
         structuredData={serviceJsonLd}
         ogImage={servicePromenadeImg}
@@ -463,7 +463,7 @@ const ServicePromenade = () => {
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 onClick={() => navigate("/walker/register")}
               >
-                Devenir promeneur
+                Devenir Accompagnateur Certifié
               </Button>
             </div>
           </div>

@@ -32,15 +32,15 @@ const caseStudies = getCaseStudiesByService("marche-reguliere");
 const marcheReguliereFAQs = [
   {
     question: "Quelle est la différence entre marche régulière et promenade ponctuelle ?",
-    answer: "La marche régulière est un engagement sur le long terme avec le même promeneur, généralement plusieurs fois par semaine. Cela permet de créer un lien fort entre l'Accompagnateur et votre chien, d'établir une routine stable et d'observer l'évolution comportementale de votre animal. La promenade ponctuelle est idéale pour des besoins occasionnels."
+    answer: "La marche régulière est un engagement sur le long terme avec le même Accompagnateur Certifié, généralement plusieurs fois par semaine. Cela permet de créer un lien fort entre l'Accompagnateur et votre chien, d'établir une routine stable et d'observer l'évolution comportementale de votre animal. La promenade ponctuelle est idéale pour des besoins occasionnels."
   },
   {
     question: "Combien de promenades par semaine sont recommandées ?",
     answer: "Cela dépend de l'énergie et des besoins de votre chien. Pour un chien adulte en appartement, 3 à 5 promenades par semaine avec un Accompagnateur sont idéales en complément de vos propres sorties. Les races très énergiques (Border Collie, Berger Australien) peuvent nécessiter une sortie quotidienne. Nous adaptons la fréquence à chaque chien."
   },
   {
-    question: "Le même promeneur viendra-t-il à chaque fois ?",
-    answer: "Oui, c'est le principe fondamental de la marche régulière. Le même promeneur s'occupe de votre chien à chaque sortie, ce qui crée une relation de confiance et une stabilité émotionnelle pour votre animal. En cas d'absence exceptionnelle de l'Accompagnateur, nous vous proposons un remplaçant vérifié que vous pouvez approuver."
+    question: "Le même Accompagnateur Certifié viendra-t-il à chaque fois ?",
+    answer: "Oui, c'est le principe fondamental de la marche régulière. Le même Accompagnateur Certifié s'occupe de votre chien à chaque sortie, ce qui crée une relation de confiance et une stabilité émotionnelle pour votre animal. En cas d'absence exceptionnelle de l'Accompagnateur, nous vous proposons un remplaçant vérifié que vous pouvez approuver."
   },
   {
     question: "Quels sont les bénéfices comportementaux de la marche régulière ?",
@@ -48,11 +48,11 @@ const marcheReguliereFAQs = [
   },
   {
     question: "Comment se passe la mise en place d'un programme régulier ?",
-    answer: "Après avoir choisi votre promeneur, vous définissez ensemble les jours et horaires de promenade. Une première rencontre permet d'établir la confiance. L'Accompagnateur apprend les habitudes de votre chien, ses commandes, ses besoins spécifiques. Après quelques sorties, une routine s'installe naturellement."
+    answer: "Après avoir choisi votre Accompagnateur Certifié, vous définissez ensemble les jours et horaires de promenade. Une première rencontre permet d'établir la confiance. L'Accompagnateur apprend les habitudes de votre chien, ses commandes, ses besoins spécifiques. Après quelques sorties, une routine s'installe naturellement."
   },
   {
     question: "Puis-je modifier le planning en cours de route ?",
-    answer: "Absolument ! Les programmes de marche régulière sont flexibles. Vous pouvez ajouter ou supprimer des promenades, changer les horaires ou la durée. Prévenez simplement votre promeneur à l'avance (24-48h idéalement). Les ajustements sont faciles via notre application."
+    answer: "Absolument ! Les programmes de marche régulière sont flexibles. Vous pouvez ajouter ou supprimer des promenades, changer les horaires ou la durée. Prévenez simplement votre Accompagnateur Certifié à l'avance (24-48h idéalement). Les ajustements sont faciles via notre application."
   },
   {
     question: "Y a-t-il des tarifs avantageux pour la marche régulière ?",
@@ -71,7 +71,7 @@ const ServiceMarcheReguliere = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Marche Régulière pour Chien en France",
-    "description": "Service de promenade régulière avec le même promeneur vérifié. Routine établie, bénéfices comportementaux, lien de confiance. Forfaits hebdomadaires avantageux.",
+    "description": "Service de promenade régulière avec le même Accompagnateur Certifié vérifié. Routine établie, bénéfices comportementaux, lien de confiance. Forfaits hebdomadaires avantageux.",
     "provider": {
       "@type": "Organization",
       "name": "DogWalking",
@@ -110,7 +110,7 @@ const ServiceMarcheReguliere = () => {
     {
       icon: Heart,
       title: "Lien de confiance",
-      description: "Relation forte entre votre chien et son promeneur attitré"
+      description: "Relation forte entre votre chien et son Accompagnateur Certifié attitré"
     },
     {
       icon: Calendar,
@@ -128,8 +128,8 @@ const ServiceMarcheReguliere = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Marche Régulière Chien | Accompagnateur Certifié Attitré & Routine | DogWalking"
-        description="Marche régulière avec le même promeneur vérifié. Routine stable, bénéfices comportementaux, lien de confiance. Forfaits avantageux pour un engagement long terme."
-        keywords="marche régulière chien, promenade quotidienne, promeneur attitré, routine chien, forfait promenade, dog walking régulier"
+        description="Marche régulière avec le même Accompagnateur Certifié vérifié. Routine stable, bénéfices comportementaux, lien de confiance. Forfaits avantageux pour un engagement long terme."
+        keywords="marche régulière chien, promenade quotidienne, Accompagnateur Certifié attitré, routine chien, forfait promenade, dog walking régulier"
         canonicalUrl="https://dogwalking.fr/services/marche-reguliere"
         structuredData={serviceJsonLd}
         ogImage={marcheHero}
@@ -143,12 +143,12 @@ const ServiceMarcheReguliere = () => {
           badgeText="Accompagnement long terme"
           title={<>Marche Régulière : <span className="text-gradient">Routine & Bien-être</span> pour Votre Chien</>}
           description="Offrez à votre compagnon la stabilité d'un Accompagnateur attitré. La marche régulière crée une routine rassurante, renforce le lien de confiance et améliore significativement le comportement de votre chien sur le long terme."
-          ctaText="Trouver mon promeneur"
+          ctaText="Trouver mon Accompagnateur Certifié"
           ctaLink="/walkers?service=marche_reguliere"
           secondaryCtaText="Voir les forfaits"
           imageAlt="Accompagnateur Certifié régulier avec un chien heureux sur un chemin bordé d'arbres en automne"
           trustIndicators={[
-            { icon: Repeat, text: "Même promeneur" },
+            { icon: Repeat, text: "Même Accompagnateur Certifié" },
             { icon: Calendar, text: "Routine établie" },
             { icon: TrendingUp, text: "Bénéfices prouvés" },
           ]}
@@ -169,7 +169,7 @@ const ServiceMarcheReguliere = () => {
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Contrairement aux promenades ponctuelles, la marche régulière établit une véritable 
-                relation entre votre chien et son promeneur attitré. C'est un service récurrent qui 
+                relation entre votre chien et son Accompagnateur Certifié attitré. C'est un service récurrent qui 
                 apporte stabilité, confiance et bénéfices durables pour votre compagnon.
               </p>
             </motion.div>
@@ -196,7 +196,7 @@ const ServiceMarcheReguliere = () => {
                     <Users className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Un promeneur attitré</h3>
+                    <h3 className="text-xl font-bold mb-2">Un Accompagnateur Certifié attitré</h3>
                     <p className="text-muted-foreground">
                       Le même professionnel s'occupe de votre chien à chaque sortie. Il connaît 
                       ses habitudes, ses préférences, ses réactions. Une relation de confiance 
@@ -211,7 +211,7 @@ const ServiceMarcheReguliere = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2">Horaires réguliers</h3>
                     <p className="text-muted-foreground">
-                      Votre chien sait quand son promeneur arrive. Cette prévisibilité réduit 
+                      Votre chien sait quand son Accompagnateur Certifié arrive. Cette prévisibilité réduit 
                       l'anxiété et structure sa journée. Les chiens adorent la routine.
                     </p>
                   </div>
@@ -223,7 +223,7 @@ const ServiceMarcheReguliere = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2">Suivi de l'évolution</h3>
                     <p className="text-muted-foreground">
-                      Votre promeneur observe les progrès de votre chien, note les changements 
+                      Votre Accompagnateur Certifié observe les progrès de votre chien, note les changements 
                       comportementaux et vous fait des retours réguliers sur son évolution.
                     </p>
                   </div>
@@ -273,7 +273,7 @@ const ServiceMarcheReguliere = () => {
               </motion.div>
               <motion.img
                 src={marcheEquilibre}
-                alt="Chien équilibré et heureux marchant calmement avec son promeneur"
+                alt="Chien équilibré et heureux marchant calmement avec son Accompagnateur Certifié"
                 className="rounded-2xl shadow-lg w-full object-cover aspect-video"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -324,7 +324,7 @@ const ServiceMarcheReguliere = () => {
                   Organisation Hebdomadaire Flexible
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Définissez avec votre promeneur un planning qui s'adapte à votre vie. 
+                  Définissez avec votre Accompagnateur Certifié un planning qui s'adapte à votre vie. 
                   Que vous ayez besoin de 3 promenades par semaine ou d'une sortie quotidienne, 
                   nous construisons ensemble un programme sur mesure.
                 </p>
@@ -377,7 +377,7 @@ const ServiceMarcheReguliere = () => {
           </div>
         </section>
 
-        {/* Relation promeneur / chien */}
+        {/* Relation Accompagnateur Certifié / chien */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -399,7 +399,7 @@ const ServiceMarcheReguliere = () => {
                   Un Lien Unique Entre Votre Chien et Son Accompagnateur Certifié
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Avec le temps, votre chien reconnaît son promeneur, l'attend avec impatience 
+                  Avec le temps, votre chien reconnaît son Accompagnateur Certifié, l'attend avec impatience 
                   et développe une véritable complicité avec lui. Cette relation de confiance 
                   est bénéfique pour le bien-être émotionnel de votre compagnon.
                 </p>

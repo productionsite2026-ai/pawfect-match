@@ -87,7 +87,7 @@ const Tarifs = () => {
     },
     {
       question: "À quoi sert le code de fin de service ?",
-      answer: "Le code de fin de service est déclenché par l'Accompagnateur à la fin de la prestation. Vous le communiquez à l'Accompagnateur pour valider le paiement. Sans ce code, aucun fonds n'est versé. En cas de problème technique, l'option « Le promeneur n'a plus de batterie » permet de valider à distance."
+      answer: "Le code de fin de service est déclenché par l'Accompagnateur à la fin de la prestation. Vous le communiquez à l'Accompagnateur pour valider le paiement. Sans ce code, aucun fonds n'est versé. En cas de problème technique, l'option « Le Accompagnateur Certifié n'a plus de batterie » permet de valider à distance."
     },
     {
       question: "Les preuves visuelles sont-elles obligatoires ?",

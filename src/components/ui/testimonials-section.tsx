@@ -37,7 +37,7 @@ export const TestimonialsSection = () => {
       name: "Pierre D.",
       city: "Bordeaux",
       rating: 5,
-      comment: "Mon promeneur m'envoie toujours une vidéo de la balade. Voir mon chien heureux en pleine nature, ça n'a pas de prix.",
+      comment: "Mon Accompagnateur Certifié m'envoie toujours une vidéo de la balade. Voir mon chien heureux en pleine nature, ça n'a pas de prix.",
       dog: "Rocky, Labrador",
       verified: true,
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Pierre"

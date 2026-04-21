@@ -132,7 +132,7 @@ export const EarningsChart: React.FC<EarningsChartProps> = ({
                   <DollarSign className="h-6 w-6 text-muted-foreground" />
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">13% de frais de service</p>
+              <p className="text-xs text-muted-foreground mt-2">15% de frais de service</p>
             </CardContent>
           </Card>
         </motion.div>

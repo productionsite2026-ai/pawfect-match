@@ -142,7 +142,7 @@ export const MissionProofViewer: React.FC<MissionProofViewerProps> = ({
             </div>
             <p className="font-medium mb-1">Aucune photo reçue</p>
             <p className="text-sm text-muted-foreground">
-              Les preuves photo apparaîtront ici une fois envoyées par le promeneur.
+              Les preuves photo apparaîtront ici une fois envoyées par le Accompagnateur Certifié.
             </p>
           </div>
         ) : (
@@ -241,7 +241,7 @@ export const MissionProofViewer: React.FC<MissionProofViewerProps> = ({
               <AlertCircle className="h-5 w-5 text-primary shrink-0" />
               <div className="text-sm">
                 <strong>Rappel :</strong> Les preuves photo sont obligatoires pour valider la mission 
-                et débloquer le paiement au promeneur.
+                et débloquer le paiement au Accompagnateur Certifié.
               </div>
             </div>
           </div>
