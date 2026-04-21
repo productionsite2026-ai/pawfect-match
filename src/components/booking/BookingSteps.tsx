@@ -102,7 +102,9 @@ export const BookingSteps = ({
     time: '',
     duration: 30,
     notes: '',
-    address: ''
+    address: '',
+    keyHandoverProtocol: undefined,
+    keyHandoverDetails: ''
   });
 
   const calculatePrice = () => {
@@ -137,7 +139,12 @@ export const BookingSteps = ({
   const canProceed = () => {
     switch (step) {
       case 1: return !!formData.service;
-      case 2: return !!formData.date && !!formData.time;
+      case 2: {
+        const dateOk = !!formData.date && !!formData.time;
+        const needsKeys = SERVICES_REQUIRING_KEYS.includes(formData.service);
+        const keysOk = !needsKeys || !!formData.keyHandoverProtocol;
+        return dateOk && keysOk;
+      }
       case 3: return isAuthenticated ? !!formData.dogId : true;
       case 4: return true;
       default: return false;
@@ -328,6 +335,55 @@ export const BookingSteps = ({
                     className="mt-1.5"
                   />
                 </div>
+
+                {/* Protocole remise des clés (LOT 8) */}
+                {SERVICES_REQUIRING_KEYS.includes(formData.service) && (
+                  <div className="space-y-3 p-4 rounded-xl border-2 border-primary/20 bg-primary/5">
+                    <div className="flex items-center gap-2">
+                      <Key className="h-5 w-5 text-primary" />
+                      <Label className="text-sm font-semibold">Protocole de remise des clés *</Label>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Pour les prestations à domicile, indiquez comment l'Accompagnateur Certifié récupèrera vos clés.
+                    </p>
+                    <Select
+                      value={formData.keyHandoverProtocol}
+                      onValueChange={(v) => setFormData({ ...formData, keyHandoverProtocol: v as KeyHandoverProtocol })}
+                    >
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Choisir le mode de remise..." />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {keyProtocolOptions.map((opt) => (
+                          <SelectItem key={opt.value} value={opt.value}>
+                            <div className="flex items-center gap-2">
+                              <span>{opt.icon}</span>
+                              <div className="text-left">
+                                <p className="font-medium">{opt.label}</p>
+                                <p className="text-xs text-muted-foreground">{opt.description}</p>
+                              </div>
+                            </div>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {formData.keyHandoverProtocol && formData.keyHandoverProtocol !== 'already_provided' && (
+                      <Textarea
+                        placeholder={
+                          formData.keyHandoverProtocol === 'lockbox'
+                            ? 'Code de la boîte à clés + emplacement (ex: près de la porte, code 1234)'
+                            : formData.keyHandoverProtocol === 'neighbor'
+                            ? 'Nom du voisin/concierge, étage, contact téléphonique'
+                            : 'Lieu et horaire convenus pour la remise en main propre'
+                        }
+                        value={formData.keyHandoverDetails || ''}
+                        onChange={(e) => setFormData({ ...formData, keyHandoverDetails: e.target.value })}
+                        rows={2}
+                        className="bg-background"
+                      />
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </motion.div>
