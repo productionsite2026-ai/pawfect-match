@@ -160,7 +160,7 @@ export const deveniAccompagnateur_CertifiéFAQs: FAQItem[] = [
   },
   {
     question: "Combien puis-je gagner comme Accompagnateur Certifié de chien ?",
-    answer: "Les revenus varient selon votre disponibilité et votre zone. En moyenne, un Accompagnateur Certifié actif gagne entre 500€ et 2000€ par mois. Les tarifs minimum sont de 8€ pour une promenade, mais vous fixez librement vos prix. Après la commission de 15%, vous percevez 87% du montant."
+    answer: "Les revenus varient selon votre disponibilité et votre zone. En moyenne, un Accompagnateur Certifié actif gagne entre 500€ et 2000€ par mois. Les tarifs minimum sont de 8€ pour une promenade, mais vous fixez librement vos prix. Après la commission de 15%, vous percevez 85% du montant."
   },
   {
     question: "Dois-je déclarer mes revenus de Accompagnateur Certifié ?",
