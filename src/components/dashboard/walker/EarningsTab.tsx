@@ -338,7 +338,7 @@ const WalkerEarningsTab = () => {
             <p className="font-semibold text-lg mb-1">Comment ça fonctionne ?</p>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>• Les paiements sont libérés <strong>48h après</strong> la fin de la mission</li>
-              <li>• La commission DogWalking est de <strong>13%</strong></li>
+              <li>• La commission DogWalking est de <strong>15%</strong></li>
               <li>• Les retraits sont traités sous <strong>2-3 jours ouvrés</strong></li>
             </ul>
           </div>

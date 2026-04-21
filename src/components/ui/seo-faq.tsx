@@ -75,15 +75,15 @@ export const SEOFAQ = ({
 export const tarifsFAQs: FAQItem[] = [
   {
     question: "Comment sont calculés les tarifs des promenades de chien ?",
-    answer: "Les tarifs sont fixés librement par chaque Accompagnateur Certifié, avec un minimum garanti par DogWalking (8€ pour une promenade). Le prix final dépend de la durée, du nombre de chiens, et des services additionnels. La commission de 13% couvre la protection, le support client et la plateforme sécurisée."
+    answer: "Les tarifs sont fixés librement par chaque Accompagnateur Certifié, avec un minimum garanti par DogWalking (8€ pour une promenade). Le prix final dépend de la durée, du nombre de chiens, et des services additionnels. La commission de 15% couvre la protection, le support client et la plateforme sécurisée."
   },
   {
     question: "Qu'est-ce que le paiement sécurisé et comment ça fonctionne ?",
     answer: "Le paiement sécurisé est un système de sécurité où votre argent est bloqué sur un compte tiers pendant 24 à 48 heures. Le Accompagnateur Certifié ne reçoit le paiement qu'après avoir envoyé une preuve photo/vidéo de la prestation. Si aucune preuve n'est fournie, vous êtes automatiquement remboursé."
   },
   {
-    question: "La commission de 13% est-elle justifiée ?",
-    answer: "La commission de 13% inclut : l'protection complète, la vérification complète des Accompagnateurs Certifiés (Identité vérifiée), le système de paiement sécurisé, le support client disponible, et la plateforme technologique. C'est un package tout compris pour votre tranquillité."
+    question: "La commission de 15% est-elle justifiée ?",
+    answer: "La commission de 15% inclut : l'protection complète, la vérification complète des Accompagnateurs Certifiés (Identité vérifiée), le système de paiement sécurisé, le support client disponible, et la plateforme technologique. C'est un package tout compris pour votre tranquillité."
   },
   {
     question: "Puis-je laisser un pourboire au Accompagnateur Certifié ?",
@@ -160,7 +160,7 @@ export const deveniAccompagnateur_CertifiéFAQs: FAQItem[] = [
   },
   {
     question: "Combien puis-je gagner comme Accompagnateur Certifié de chien ?",
-    answer: "Les revenus varient selon votre disponibilité et votre zone. En moyenne, un Accompagnateur Certifié actif gagne entre 500€ et 2000€ par mois. Les tarifs minimum sont de 8€ pour une promenade, mais vous fixez librement vos prix. Après la commission de 13%, vous percevez 87% du montant."
+    answer: "Les revenus varient selon votre disponibilité et votre zone. En moyenne, un Accompagnateur Certifié actif gagne entre 500€ et 2000€ par mois. Les tarifs minimum sont de 8€ pour une promenade, mais vous fixez librement vos prix. Après la commission de 15%, vous percevez 87% du montant."
   },
   {
     question: "Dois-je déclarer mes revenus de Accompagnateur Certifié ?",
