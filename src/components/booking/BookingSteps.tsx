@@ -12,11 +12,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import {
   Calendar, Clock, Dog, MapPin, Shield, Lock, CheckCircle,
-  ArrowLeft, ArrowRight, Sparkles, Star, CreditCard, MessageCircle
+  ArrowLeft, ArrowRight, Sparkles, Star, CreditCard, MessageCircle, Key
 } from "lucide-react";
 import type { Database } from "@/integrations/supabase/types";
 
 type ServiceType = Database['public']['Enums']['service_type'];
+export type KeyHandoverProtocol = 'in_person' | 'lockbox' | 'neighbor' | 'already_provided';
 
 interface BookingStepsProps {
   walker: any;
@@ -34,7 +35,18 @@ interface BookingData {
   duration: number;
   notes: string;
   address?: string;
+  keyHandoverProtocol?: KeyHandoverProtocol;
+  keyHandoverDetails?: string;
 }
+
+const SERVICES_REQUIRING_KEYS: ServiceType[] = ['garde', 'visite', 'pet_sitting' as ServiceType];
+
+const keyProtocolOptions: { value: KeyHandoverProtocol; label: string; description: string; icon: string }[] = [
+  { value: 'in_person', label: 'Remise en main propre', description: 'RDV avant la mission pour récupérer les clés', icon: '🤝' },
+  { value: 'lockbox', label: 'Boîte à clés sécurisée', description: 'Code à fournir dans les détails', icon: '🔐' },
+  { value: 'neighbor', label: 'Voisin / Concierge / Gardien', description: 'Indiquez nom et contact', icon: '👤' },
+  { value: 'already_provided', label: 'Double déjà fourni', description: 'L\'Accompagnateur Certifié a déjà une copie', icon: '🔑' },
+];
 
 const serviceOptions = [
   { 
