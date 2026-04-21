@@ -23,6 +23,8 @@ interface BookingData {
   duration: number;
   notes: string;
   address?: string;
+  keyHandoverProtocol?: 'in_person' | 'lockbox' | 'neighbor' | 'already_provided';
+  keyHandoverDetails?: string;
 }
 
 const BookWalk = () => {
@@ -126,7 +128,7 @@ const BookWalk = () => {
 
     try {
       const price = calculatePrice(data);
-      const { data: bookingData, error } = await supabase.from('bookings').insert({
+      const insertPayload: any = {
         owner_id: userId,
         walker_id: walkerId,
         dog_id: data.dogId,
@@ -137,7 +139,16 @@ const BookWalk = () => {
         notes: data.notes || null,
         address: data.address || null,
         service_type: data.service,
-      }).select('id').single();
+      };
+      if (data.keyHandoverProtocol) {
+        insertPayload.key_handover_protocol = data.keyHandoverProtocol;
+        insertPayload.key_handover_details = data.keyHandoverDetails || null;
+      }
+      const { data: bookingData, error } = await supabase
+        .from('bookings')
+        .insert(insertPayload)
+        .select('id')
+        .single();
 
       if (error) throw error;
 
