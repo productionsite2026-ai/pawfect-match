@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import FiltersSidebar from "@/components/findwalkers/FiltersSidebar";
 import AnnoncesLibresBlock from "@/components/findwalkers/AnnoncesLibresBlock";
-import AccompagnateurCertifiesListe from "@/components/findwalkers/Accompagnateurs CertifiésListe";
+import AccompagnateurCertifiesListe from "@/components/findwalkers/PromeneursListe";
 
 const SearchSection = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
